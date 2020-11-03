@@ -29,10 +29,13 @@ function setup() {
 function draw() 
 {
   background(0);
-  
-// Player
   fill(255);
+// exit message
+  textSize(15);
+  text("EXIT", width-50,height-85) 
   rect(486,500,15,85);
+
+// Player  
   fill(59,250,47);
 // Key  
   // W
@@ -53,9 +56,16 @@ function draw()
   // D
   if(keyIsDown(68))
   {
-      PlayerX-=5;
+      PlayerX+=5;
   }
   ellipse(PlayerX, PlayerY, 30, 30);
+ //Exit
+  if(PlayerX > width && PlayerY > width-50)    
+  {
+     fill(255);
+     textSize(26);
+     text("You Win!", 195, 200);
+  }  
 
   
 // Enemy 1
@@ -103,10 +113,10 @@ function draw()
         mousex = mouseX;
         mousey = mouseY;
   
-// check to see if the character has left the exit
+// Exit
     if(PlayerX > width && PlayerY > width-50)
     {
-        fill(0);
+        fill(255);
         stroke(5);
         textSize(26);
         text("You Win!", width/2-50, height/2-50);
