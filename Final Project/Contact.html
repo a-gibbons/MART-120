@@ -1,0 +1,122 @@
+<html>
+<title>My Website!</title> 
+<title>External Style Sheet</title>
+        <head>
+            <link rel="stylesheet" type="text/css" href="mainstyle.css">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                </head>
+                <body>
+                    <button type="button" class="btn btn-success"><a href="Home.html">About Me! </a></button>
+                    <button type="button" class="btn btn-info"><a href="story.html">Story Time? </a></button>
+                    <button type="button" class="btn btn-info"><a href="projects.html">My Projects! </a></button>
+                </body>
+
+        </head>
+<head>
+<script>
+    function CheckForm()
+    {
+        var Name,Phone,Email,Terms,No;
+        Name = document.getElementById("fName").value;
+        Phone = document.getElementById("txtPhone").value;
+        Email = document.getElementById("eAddress").value;
+        Terms = document.getElementById("Answer").value;
+        No = document.getElementById("Answer").value;
+        
+        if(Name == "")
+        {
+            window.alert("Name is Required.");
+            document.getElementById("fName").style.backgroundColor = "red";
+            document.getElementById("fName").focus();
+        }
+        else
+        {
+            document.getElementById("fName").style.backgroundColor = "white";
+        }
+        
+        if(Phone == "")
+        {
+            window.alert("Phone Number is Required.");
+            document.getElementById("txtPhone").style.backgroundColor = "red";
+            document.getElementById("txtPhone").focus();
+        } 
+        else 
+        {               
+            document.getElementById("txtPhone").style.backgroundColor = "white";    
+        }
+
+       if(Email == "")
+        {            
+            window.alert("Email Address is Required.");
+            document.getElementById("eAddress").style.backgroundColor = "red";
+            document.getElementById("eAddress").focus();
+        }
+        else 
+        {                    
+            document.getElementById("eAddress").style.backgroundColor = "white";
+        }
+
+        if(Terms == "")
+        {
+            document.getElementById("Answer").style.backgroundColor = "red";
+            document.getElementById("Answer").focus();
+            window.alert("You must agree to the Terms and Conditions before Continuing");
+        }
+
+        if(No == "No")
+        {
+            document.getElementById("Answer").style.backgroundColor = "red";
+            document.getElementById("Answer").focus();
+            window.alert("You must agree to the Terms and Conditions before Continuing");    
+        }
+        if(Terms == "Yes")
+        {
+            document.getElementById("Answer").style.backgroundColor = "white";
+            document.getElementById("message").innerHTML = ("Thank you" + " " + Name + "!" + " " + "Talk to you soon!");
+        }    
+    }
+  </script>
+</head>
+<h1>Hello!</h1>
+<style>
+    body {
+        background-color: royalblue;
+      }
+    h1 {
+      color: white;
+      text-align: center;
+    }
+    h2 {
+      color: white;
+      text-align: center;
+    }
+    </style>
+<h2> If you need to contact me, please fill out the form below and I will get back you as soon as I can!</h2>
+<br>
+<body>
+    <table>
+        <tr>
+          <td>First Name</td>
+          <td><input type="text" id="fName"></td>
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td><input type="text" id="txtPhone"></td>
+        </tr>
+        <tr>
+          <td>Your Email</td>
+          <td><input type="text" id="eAddress"><br></td>
+        </tr>
+        <tr>
+          <td><br>Do you agree to the<br> Terms and Conditions?</td>
+          <td><input type="text" id="Answer"></td>
+        </tr>  
+        <tr>
+          <td colspan="2"><button id="btnSubmit" onclick="CheckForm();">Submit</button></td>
+      </tr> 
+  </table>
+  <div id="message"></div> 
+</body>
